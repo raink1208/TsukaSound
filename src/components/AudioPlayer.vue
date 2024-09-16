@@ -200,6 +200,4 @@ watch(
 .play-button-container #volumeControl i {
   padding-right: 5px;
 }
-
-//color: #ef4444;
 </style>
