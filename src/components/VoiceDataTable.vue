@@ -34,7 +34,7 @@ const handlePlayVoice = async (voiceName: string) => {
 </script>
 
 <template>
-  <DataTable filter-display="row" v-model:filters="filters" class="voiceTable" stripedRows scrollable scrollHeight="780px" :value="voice">
+  <DataTable filter-display="row" v-model:filters="filters" class="voiceTable" stripedRows scrollable scrollHeight="80vh" :value="voice">
     <Column field="title" sortable header="タイトル" style="min-width: 20%" :show-filter-menu="false">
       <template #filter="{ filterModel, filterCallback}">
         <InputText v-model="filterModel.value" @input="filterCallback()" placeholder="タイトル" />

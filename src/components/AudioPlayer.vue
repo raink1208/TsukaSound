@@ -195,6 +195,18 @@ watch(
   margin-left: auto;
 }
 
+@media screen and (max-width: 530px) {
+  .play-button-container #volumeControl {
+    display: none;
+  }
+  .play-button-container #audioName {
+    position: revert;
+    transform: revert;
+    margin-left: auto;
+    margin-right: 10px;
+  }
+}
+
 .play-button-container #volumeControl i {
   padding-right: 5px;
 }
