@@ -24,11 +24,11 @@ const selectAudio = (audioData: AudioData) => {
 <style scoped>
 h1 {
   font-size: 1.8rem;
-  margin: 10px 15px 0 15px;
+  margin: 10px 15px 0 15px !important;
 }
 
 p {
-  margin: 5px 10px 5px 10px;
+  margin: 5px 10px 5px 10px !important;
 }
 .container:nth-last-child(1) {
   padding-bottom: 70px;
