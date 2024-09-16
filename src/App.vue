@@ -26,6 +26,7 @@ h1 {
   font-size: 1.8rem;
   margin: 10px 15px 0 15px;
 }
+
 p {
   margin: 5px 10px 5px 10px;
 }
