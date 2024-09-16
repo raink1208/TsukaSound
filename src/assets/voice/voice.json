@@ -1,0 +1,837 @@
+[
+  {
+    "title": "DJチェキチェキ",
+    "score": 27,
+    "rank": "C"
+  },
+  {
+    "title": "DJチェキチェキ2",
+    "score": 4,
+    "rank": "C"
+  },
+  {
+    "title": "DJのスクラッチ",
+    "score": 64,
+    "rank": "B"
+  },
+  {
+    "title": "アシカの鳴き声",
+    "score": 40,
+    "rank": "C"
+  },
+  {
+    "title": "いびき",
+    "score": 8,
+    "rank": "C"
+  },
+  {
+    "title": "インドクジャクの鳴き声",
+    "score": 53,
+    "rank": "C"
+  },
+  {
+    "title": "インドクジャクの鳴き声2",
+    "score": 40,
+    "rank": "C"
+  },
+  {
+    "title": "インドクジャクの鳴き声3",
+    "score": 85,
+    "rank": "A"
+  },
+  {
+    "title": "ウグイスのさえずり",
+    "score": 25,
+    "rank": "C"
+  },
+  {
+    "title": "ウシガエルの鳴き声",
+    "score": 100,
+    "rank": "S"
+  },
+  {
+    "title": "うみねこの鳴き声",
+    "score": 30,
+    "rank": "C"
+  },
+  {
+    "title": "エアホーン",
+    "score": 43,
+    "rank": "C"
+  },
+  {
+    "title": "エアーホーン2",
+    "score": 77,
+    "rank": "B"
+  },
+  {
+    "title": "エンマコオロギの声",
+    "score": 54,
+    "rank": "C"
+  },
+  {
+    "title": "オオカミの遠吠え",
+    "score": 0,
+    "rank": "C"
+  },
+  {
+    "title": "オオカミの遠吠え2",
+    "score": 100,
+    "rank": "S"
+  },
+  {
+    "title": "オオルリのさえずり",
+    "score": 0,
+    "rank": "C"
+  },
+  {
+    "title": "お寺の鐘",
+    "score": 19,
+    "rank": "C"
+  },
+  {
+    "title": "カエルの鳴き声",
+    "score": 83,
+    "rank": "A"
+  },
+  {
+    "title": "カッコウの鳴き声",
+    "score": 18,
+    "rank": "C"
+  },
+  {
+    "title": "ガブリ！",
+    "score": 93,
+    "rank": "A"
+  },
+  {
+    "title": "ガブリ！2",
+    "score": 53,
+    "rank": "C"
+  },
+  {
+    "title": "ガブリ！3",
+    "score": 53,
+    "rank": "C"
+  },
+  {
+    "title": "ガブリ！4",
+    "score": 52,
+    "rank": "C"
+  },
+  {
+    "title": "カメラのシャッター音",
+    "score": 77,
+    "rank": "B"
+  },
+  {
+    "title": "ガラスが割れる",
+    "score": 50,
+    "rank": "C"
+  },
+  {
+    "title": "カラスの鳴き声",
+    "score": 0,
+    "rank": "C"
+  },
+  {
+    "title": "カラスの鳴き声2",
+    "score": 4,
+    "rank": "C"
+  },
+  {
+    "title": "キジバトの鳴き声",
+    "score": 63,
+    "rank": "B"
+  },
+  {
+    "title": "キュッキュと拭く音",
+    "score": 49,
+    "rank": "C"
+  },
+  {
+    "title": "クイズ出題音",
+    "score": 97,
+    "rank": "A"
+  },
+  {
+    "title": "ゲームのパンチ音",
+    "score": 38,
+    "rank": "C"
+  },
+  {
+    "title": "コンピューターの計算",
+    "score": 77,
+    "rank": "B"
+  },
+  {
+    "title": "ジャジャーン",
+    "score": 62,
+    "rank": "B"
+  },
+  {
+    "title": "ジャジャーン2",
+    "score": 57,
+    "rank": "C"
+  },
+  {
+    "title": "ショック",
+    "score": 14,
+    "rank": "C"
+  },
+  {
+    "title": "ショットガン",
+    "score": 57,
+    "rank": "C"
+  },
+  {
+    "title": "スズメの鳴き声",
+    "score": 88,
+    "rank": "A"
+  },
+  {
+    "title": "スポッ",
+    "score": 9,
+    "rank": "C"
+  },
+  {
+    "title": "スポッ2",
+    "score": 67,
+    "rank": "B"
+  },
+  {
+    "title": "スマホのバイブ音",
+    "score": 0,
+    "rank": "C"
+  },
+  {
+    "title": "ゾウの鳴き声",
+    "score": 100,
+    "rank": "S"
+  },
+  {
+    "title": "それから？",
+    "score": 14,
+    "rank": "C"
+  },
+  {
+    "title": "ゾンビの声",
+    "score": 72,
+    "rank": "B"
+  },
+  {
+    "title": "たき火が燃える",
+    "score": 29,
+    "rank": "C"
+  },
+  {
+    "title": "ダッシュ！",
+    "score": 77,
+    "rank": "B"
+  },
+  {
+    "title": "チェーンソーの音",
+    "score": 65,
+    "rank": "B"
+  },
+  {
+    "title": "ツクツクボウシの鳴き声",
+    "score": 78,
+    "rank": "B"
+  },
+  {
+    "title": "ドアのチャイム",
+    "score": 72,
+    "rank": "B"
+  },
+  {
+    "title": "ドアのチャイム2",
+    "score": 58,
+    "rank": "C"
+  },
+  {
+    "title": "ドアを開ける",
+    "score": 48,
+    "rank": "C"
+  },
+  {
+    "title": "ドックンドックン",
+    "score": 0,
+    "rank": "C"
+  },
+  {
+    "title": "ドックンドックン2",
+    "score": 0,
+    "rank": "C"
+  },
+  {
+    "title": "とほほな感じ",
+    "score": 75,
+    "rank": "B"
+  },
+  {
+    "title": "ドラム缶",
+    "score": 100,
+    "rank": "S"
+  },
+  {
+    "title": "ドラを鳴らす",
+    "score": 26,
+    "rank": "C"
+  },
+  {
+    "title": "トンビの鳴き声",
+    "score": 43,
+    "rank": "C"
+  },
+  {
+    "title": "ナイフで切る",
+    "score": 74,
+    "rank": "B"
+  },
+  {
+    "title": "ナイフで切る2",
+    "score": 98,
+    "rank": "A"
+  },
+  {
+    "title": "ナイフで切る3",
+    "score": 100,
+    "rank": "S"
+  },
+  {
+    "title": "ニワトリの鳴き声",
+    "score": 0,
+    "rank": "C"
+  },
+  {
+    "title": "ニワトリの鳴き声2",
+    "score": 31,
+    "rank": "C"
+  },
+  {
+    "title": "ノコギリで切る",
+    "score": 64,
+    "rank": "B"
+  },
+  {
+    "title": "ハープの音色",
+    "score": 24,
+    "rank": "C"
+  },
+  {
+    "title": "ハープの音色2",
+    "score": 40,
+    "rank": "C"
+  },
+  {
+    "title": "パトカーのサイレン",
+    "score": 0,
+    "rank": "C"
+  },
+  {
+    "title": "ハトの鳴き声",
+    "score": 95,
+    "rank": "A"
+  },
+  {
+    "title": "パフパフ！",
+    "score": 41,
+    "rank": "C"
+  },
+  {
+    "title": "ビーム砲",
+    "score": 6,
+    "rank": "C"
+  },
+  {
+    "title": "ヒグラシの鳴き声",
+    "score": 83,
+    "rank": "A"
+  },
+  {
+    "title": "びよ～～ん",
+    "score": 39,
+    "rank": "C"
+  },
+  {
+    "title": "ヒヨコの鳴き声",
+    "score": 13,
+    "rank": "C"
+  },
+  {
+    "title": "ビヨヨヨ～ン",
+    "score": 92,
+    "rank": "A"
+  },
+  {
+    "title": "ひらめき",
+    "score": 79,
+    "rank": "B"
+  },
+  {
+    "title": "ビリヤード",
+    "score": 93,
+    "rank": "A"
+  },
+  {
+    "title": "ファスナーの音",
+    "score": 42,
+    "rank": "C"
+  },
+  {
+    "title": "ファンファーレ",
+    "score": 67,
+    "rank": "B"
+  },
+  {
+    "title": "ぼい～ん！",
+    "score": 0,
+    "rank": "C"
+  },
+  {
+    "title": "ぼい～ん！2",
+    "score": 6,
+    "rank": "C"
+  },
+  {
+    "title": "ほうきで掃く",
+    "score": 60,
+    "rank": "C"
+  },
+  {
+    "title": "ボウリング",
+    "score": 11,
+    "rank": "C"
+  },
+  {
+    "title": "ボトルでトクトク注ぐ",
+    "score": 65,
+    "rank": "B"
+  },
+  {
+    "title": "ボトルでトクトク注ぐ2",
+    "score": 0,
+    "rank": "C"
+  },
+  {
+    "title": "ホラーのタイトル",
+    "score": 62,
+    "rank": "B"
+  },
+  {
+    "title": "ほら貝",
+    "score": 31,
+    "rank": "C"
+  },
+  {
+    "title": "ほら貝2",
+    "score": 0,
+    "rank": "C"
+  },
+  {
+    "title": "ホワンホワン",
+    "score": 72,
+    "rank": "B"
+  },
+  {
+    "title": "マシンガン",
+    "score": 40,
+    "rank": "C"
+  },
+  {
+    "title": "マントをバサッ",
+    "score": 0,
+    "rank": "C"
+  },
+  {
+    "title": "ミンミンゼミ",
+    "score": 45,
+    "rank": "C"
+  },
+  {
+    "title": "ヤギの鳴き声",
+    "score": 65,
+    "rank": "B"
+  },
+  {
+    "title": "ライオンの鳴き声",
+    "score": 41,
+    "rank": "C"
+  },
+  {
+    "title": "リンゴをかじる",
+    "score": 53,
+    "rank": "C"
+  },
+  {
+    "title": "ロボットファイト",
+    "score": 54,
+    "rank": "C"
+  },
+  {
+    "title": "ワシの鳴き声",
+    "score": 21,
+    "rank": "C"
+  },
+  {
+    "title": "映画のパンチ音",
+    "score": 53,
+    "rank": "C"
+  },
+  {
+    "title": "映画のパンチ音2",
+    "score": 88,
+    "rank": "A"
+  },
+  {
+    "title": "怪獣の足音",
+    "score": 17,
+    "rank": "C"
+  },
+  {
+    "title": "怪獣の足音2",
+    "score": 0,
+    "rank": "C"
+  },
+  {
+    "title": "缶けり",
+    "score": 100,
+    "rank": "S"
+  },
+  {
+    "title": "缶を開ける音",
+    "score": 67,
+    "rank": "B"
+  },
+  {
+    "title": "缶を開ける音2",
+    "score": 33,
+    "rank": "C"
+  },
+  {
+    "title": "岩が割れる",
+    "score": 98,
+    "rank": "A"
+  },
+  {
+    "title": "気づく",
+    "score": 46,
+    "rank": "C"
+  },
+  {
+    "title": "弓矢",
+    "score": 25,
+    "rank": "C"
+  },
+  {
+    "title": "牛の鳴き声",
+    "score": 0,
+    "rank": "C"
+  },
+  {
+    "title": "琴の和風演出",
+    "score": 100,
+    "rank": "S"
+  },
+  {
+    "title": "金額は！？",
+    "score": 42,
+    "rank": "C"
+  },
+  {
+    "title": "穴掘り",
+    "score": 77,
+    "rank": "B"
+  },
+  {
+    "title": "堅いものを落とす",
+    "score": 38,
+    "rank": "C"
+  },
+  {
+    "title": "犬が吠える",
+    "score": 13,
+    "rank": "C"
+  },
+  {
+    "title": "犬が吠える2",
+    "score": 3,
+    "rank": "C"
+  },
+  {
+    "title": "犬の鳴き声",
+    "score": 69,
+    "rank": "B"
+  },
+  {
+    "title": "紙を破く",
+    "score": 31,
+    "rank": "C"
+  },
+  {
+    "title": "試合終了のゴング",
+    "score": 48,
+    "rank": "C"
+  },
+  {
+    "title": "試合終了のゴング2",
+    "score": 57,
+    "rank": "C"
+  },
+  {
+    "title": "時代劇・カ～～～",
+    "score": 52,
+    "rank": "C"
+  },
+  {
+    "title": "時代劇・カ～～～2",
+    "score": 42,
+    "rank": "C"
+  },
+  {
+    "title": "自転車のベル",
+    "score": 40,
+    "rank": "C"
+  },
+  {
+    "title": "車のエンジン",
+    "score": 75,
+    "rank": "B"
+  },
+  {
+    "title": "尺八",
+    "score": 22,
+    "rank": "C"
+  },
+  {
+    "title": "尺八2",
+    "score": 100,
+    "rank": "S"
+  },
+  {
+    "title": "手を洗う",
+    "score": 43,
+    "rank": "C"
+  },
+  {
+    "title": "盾で防ぐ",
+    "score": 53,
+    "rank": "C"
+  },
+  {
+    "title": "盾で防ぐ2",
+    "score": 41,
+    "rank": "C"
+  },
+  {
+    "title": "盾で防ぐ3",
+    "score": 100,
+    "rank": "S"
+  },
+  {
+    "title": "小鼓",
+    "score": 34,
+    "rank": "C"
+  },
+  {
+    "title": "小鼓2",
+    "score": 25,
+    "rank": "C"
+  },
+  {
+    "title": "小鼓3",
+    "score": 100,
+    "rank": "S"
+  },
+  {
+    "title": "蒸気機関車",
+    "score": 75,
+    "rank": "B"
+  },
+  {
+    "title": "伸びる",
+    "score": 50,
+    "rank": "C"
+  },
+  {
+    "title": "薪を割る",
+    "score": 62,
+    "rank": "B"
+  },
+  {
+    "title": "水が一滴",
+    "score": 0,
+    "rank": "C"
+  },
+  {
+    "title": "水が蒸発",
+    "score": 32,
+    "rank": "C"
+  },
+  {
+    "title": "水に飛び込む",
+    "score": 29,
+    "rank": "C"
+  },
+  {
+    "title": "水に飛び込む2",
+    "score": 36,
+    "rank": "C"
+  },
+  {
+    "title": "水中",
+    "score": 78,
+    "rank": "B"
+  },
+  {
+    "title": "足首グキッ",
+    "score": 41,
+    "rank": "C"
+  },
+  {
+    "title": "打ち上げ花火",
+    "score": 75,
+    "rank": "B"
+  },
+  {
+    "title": "中華風の音色",
+    "score": 29,
+    "rank": "C"
+  },
+  {
+    "title": "中華風の音色2",
+    "score": 95,
+    "rank": "A"
+  },
+  {
+    "title": "中華風の音色3",
+    "score": 87,
+    "rank": "A"
+  },
+  {
+    "title": "鉄板を叩く",
+    "score": 90,
+    "rank": "A"
+  },
+  {
+    "title": "電気バチバチ",
+    "score": 31,
+    "rank": "C"
+  },
+  {
+    "title": "電車が通過",
+    "score": 0,
+    "rank": "C"
+  },
+  {
+    "title": "電話の着信音",
+    "score": 48,
+    "rank": "C"
+  },
+  {
+    "title": "倒れる",
+    "score": 16,
+    "rank": "C"
+  },
+  {
+    "title": "踏切",
+    "score": 53,
+    "rank": "C"
+  },
+  {
+    "title": "突っ込みを入れる",
+    "score": 21,
+    "rank": "C"
+  },
+  {
+    "title": "突風",
+    "score": 60,
+    "rank": "C"
+  },
+  {
+    "title": "入店のチャイム",
+    "score": 51,
+    "rank": "C"
+  },
+  {
+    "title": "猫の威嚇",
+    "score": 78,
+    "rank": "B"
+  },
+  {
+    "title": "猫の鳴き声",
+    "score": 69,
+    "rank": "B"
+  },
+  {
+    "title": "猫の鳴き声2",
+    "score": 69,
+    "rank": "B"
+  },
+  {
+    "title": "馬の鳴き声",
+    "score": 62,
+    "rank": "B"
+  },
+  {
+    "title": "拍子木",
+    "score": 76,
+    "rank": "B"
+  },
+  {
+    "title": "爆発",
+    "score": 0,
+    "rank": "C"
+  },
+  {
+    "title": "鳩時計",
+    "score": 7,
+    "rank": "C"
+  },
+  {
+    "title": "不安",
+    "score": 49,
+    "rank": "C"
+  },
+  {
+    "title": "風が吹く",
+    "score": 36,
+    "rank": "C"
+  },
+  {
+    "title": "放送開始のチャイム",
+    "score": 69,
+    "rank": "B"
+  },
+  {
+    "title": "本日のニュース",
+    "score": 39,
+    "rank": "C"
+  },
+  {
+    "title": "魔法のステッキ",
+    "score": 85,
+    "rank": "A"
+  },
+  {
+    "title": "羊の鳴き声",
+    "score": 99,
+    "rank": "A"
+  },
+  {
+    "title": "羊の鳴き声2",
+    "score": 100,
+    "rank": "S"
+  },
+  {
+    "title": "落雷",
+    "score": 18,
+    "rank": "C"
+  },
+  {
+    "title": "和太鼓",
+    "score": 31,
+    "rank": "C"
+  }
+]
