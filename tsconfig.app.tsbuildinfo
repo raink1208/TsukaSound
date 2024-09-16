@@ -1,0 +1,1 @@
+{"root":["./src/main.ts","./src/vite-env.d.ts","./src/domain/audio/audiodata.ts","./src/domain/audio/index.ts","./src/app.vue","./src/components/audioplayer.vue","./src/components/voicedatatable.vue","./src/components/icons/pausebutton.vue","./src/components/icons/playbutton.vue"],"version":"5.6.2"}

@@ -1,19 +1,17 @@
 <script setup lang="ts">
 import {ref, watch} from 'vue';
-import ProgressBar from 'primevue/progressbar';
 
 import PlayButton from "./icons/PlayButton.vue";
 import PauseButton from "./icons/PauseButton.vue";
+import {AudioData} from "../domain/audio";
 
-import type {AudioData} from "../domain/audio";
+interface AudioDataProps {
+  selectedAudio: AudioData | null;
+}
 
-// Props 定義
-const props = defineProps({
-  selectedAudio: AudioData
-});
+const props = defineProps<AudioDataProps>();
 
-// Refs とリアクティブデータ
-const audioPlayer = ref(null);
+const audioPlayer = ref();
 const isPlaying = ref(false);
 const currentTime = ref('00.00');
 const duration = ref('00.00');
@@ -21,14 +19,13 @@ const currentTimeSeconds = ref(0.00);
 const durationSeconds = ref(0.00);
 const volume = ref(0.5);
 
-// メソッド: 再生/一時停止の切り替え
 const togglePlay = () => {
   if (!audioPlayer.value) return;
 
   if (isPlaying.value) {
     audioPlayer.value.pause();
   } else {
-    audioPlayer.value.play().catch(error => {
+    audioPlayer.value.play().catch((error: any) => {
       console.error('再生エラー:', error);
       isPlaying.value = false;
     });
@@ -36,47 +33,40 @@ const togglePlay = () => {
   isPlaying.value = !isPlaying.value;
 };
 
-// メソッド: 再生終了時の処理
 const onEnded = () => {
   isPlaying.value = false;
   currentTimeSeconds.value = 0.00;
 };
 
-// メソッド: 再生時間の更新
 const updateTime = () => {
   if (!audioPlayer.value) return;
   currentTimeSeconds.value = audioPlayer.value.currentTime;
   currentTime.value = formatTime(audioPlayer.value.currentTime);
 };
 
-// メソッド: 総時間の取得と更新
 const updateDuration = () => {
   if (!audioPlayer.value) return;
   durationSeconds.value = audioPlayer.value.duration;
   duration.value = formatTime(audioPlayer.value.duration);
 };
 
-// メソッド: シークバーで再生位置を変更
 const seekAudio = () => {
   if (!audioPlayer.value) return;
   audioPlayer.value.currentTime = currentTimeSeconds.value;
 };
 
-// メソッド: 音量の調整
 const changeVolume = () => {
   if (!audioPlayer.value) return;
   audioPlayer.value.volume = volume.value;
 };
 
-// ヘルパー関数: 秒数を mm:ss.xx 形式にフォーマット
-const formatTime = (seconds) => {
+const formatTime = (seconds: number) => {
   const secs = seconds % 60;
   const secsInt = Math.floor(secs);
   const fractional = Math.floor((secs - secsInt) * 100);
   return `${secsInt < 10 ? '0' : ''}${secsInt}.${fractional < 10 ? '0' : ''}${fractional}`;
 };
 
-// 監視: ファイル名やディレクトリが変更された場合のリセット
 watch(
     () => props.selectedAudio,
     () => {
