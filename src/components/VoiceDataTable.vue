@@ -22,7 +22,7 @@ const filters = ref({
 
 const ranks = ['S', 'A', 'B', 'C'];
 
-const handlePlayVoice = async (event: PointerEvent) => {
+const handlePlayVoice = async (event: any) => {
   const voiceName = event.data.title;
   const voiceFile = path + voiceName + ".mp3";
   const audioData = {
