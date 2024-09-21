@@ -22,19 +22,36 @@ const filters = ref({
 
 const ranks = ['S', 'A', 'B', 'C'];
 
-const handlePlayVoice = async (voiceName: string) => {
-  const voiceFile = path+voiceName+".mp3";
+const handlePlayVoice = async (event: PointerEvent) => {
+  const voiceName = event.data.title;
+  const voiceFile = path + voiceName + ".mp3";
   const audioData = {
     audioName: voiceName,
     filePath: voiceFile
   }
   emit("selectAudio", audioData);
+};
+
+const handleDownload = async (voiceName: string) => {
+  try {
+    const voiceFile = path + voiceName + ".mp3";
+    const response = await fetch(voiceFile, {
+      mode: "cors"
+    });
+    const blob = await response.blob();
+    const downloadTag = document.createElement("a");
+    downloadTag.href = URL.createObjectURL(blob);
+    downloadTag.download = voiceName;
+    downloadTag.click();
+  } catch (error) {
+    console.error(error);
+  }
 }
 
 </script>
 
 <template>
-  <DataTable filter-display="row" v-model:filters="filters" class="voiceTable" stripedRows scrollable scrollHeight="80vh" :value="voice">
+  <DataTable filter-display="row" v-model:filters="filters" class="voiceTable" stripedRows scrollable scrollHeight="80vh" :value="voice" @row-click="handlePlayVoice($event)">
     <Column field="title" sortable header="タイトル" style="min-width: 20%" :show-filter-menu="false">
       <template #filter="{ filterModel, filterCallback}">
         <InputText v-model="filterModel.value" @input="filterCallback()" placeholder="タイトル" />
@@ -48,7 +65,7 @@ const handlePlayVoice = async (voiceName: string) => {
     </Column>
     <Column field="title" header="再生" style="width: 5%">
       <template #body="{data}">
-        <Button icon="pi pi-play-circle" aria-label="play" @click="handlePlayVoice(data.title)" />
+        <Button icon="pi pi-download" aria-label="download" @click="handleDownload(data.title)" />
       </template>
     </Column>
   </DataTable>
@@ -58,4 +75,9 @@ const handlePlayVoice = async (voiceName: string) => {
 .voiceTable {
   width: 100vw;
 }
+
+:deep(.p-datatable-table tr:hover) {
+  background-color: #ddd !important;
+}
+
 </style>

@@ -6,9 +6,12 @@ import Aura from '@primevue/themes/aura'
 
 import App from './App.vue'
 import {definePreset} from "@primevue/themes";
+import {router} from "./router";
 
 
-const app = createApp(App)
+const app = createApp(App);
+
+app.use(router);
 
 app.use(PrimeVue, {
     theme: {
