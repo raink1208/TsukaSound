@@ -1,18 +1,19 @@
-import { createApp } from 'vue'
-import './assets/normalize.css'
-import 'primeicons/primeicons.css'
-import PrimeVue from 'primevue/config'
-import Aura from '@primevue/themes/aura'
+import { createApp } from 'vue';
+import './assets/normalize.css';
+import './assets/main.css';
+import 'primeicons/primeicons.css';
+import PrimeVue from 'primevue/config';
+import Aura from '@primevue/themes/aura';
 
-import App from './App.vue'
+import App from './App.vue';
 import {definePreset} from "@primevue/themes";
 import {router} from "./router";
-
+import store from './stores/quiz';
 
 const app = createApp(App);
 
+app.use(store);
 app.use(router);
-
 app.use(PrimeVue, {
     theme: {
         preset: definePreset(Aura, {
