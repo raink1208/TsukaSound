@@ -6,13 +6,18 @@ const {question} = defineProps<{
 </script>
 
 <template>
-  <Card>
-    <template #content>
-      <p>{{question}}</p>
-    </template>
-  </Card>
+  <div class="wrapper">
+    <Card>
+      <template #title></template>
+      <template #content>
+        <p>{{question}}</p>
+      </template>
+    </Card>
+  </div>
 </template>
 
 <style scoped>
-
+.wrapper {
+  padding-top: 50px;
+}
 </style>

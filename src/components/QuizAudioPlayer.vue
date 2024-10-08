@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {ref, watch} from "vue";
+import {onMounted, ref, watch} from "vue";
 import {AudioData} from "../domain/audio";
 import PauseButton from "./icons/PauseButton.vue";
 import PlayButton from "./icons/PlayButton.vue";
@@ -13,7 +13,7 @@ const {selectedAudio} = defineProps<AudioDataProps>();
 const audioPlayer = ref<HTMLAudioElement>();
 
 const isPlaying = ref(false);
-const volume = ref(0.5);
+const volume = ref(0.25);
 
 const onLoad = () => {
   audioPlayer.value?.play();
@@ -44,6 +44,9 @@ const togglePlay = () => {
   isPlaying.value = !isPlaying.value;
 };
 
+onMounted(() => {
+  audioPlayer.value.volume = volume.value;
+});
 </script>
 
 <template>
