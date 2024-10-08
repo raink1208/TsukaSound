@@ -1,58 +1,40 @@
-import { Module } from 'vuex';
+import {defineStore} from "pinia";
 
 export interface QuizState {
     quizScore: number;
     nowId: number;
+    answered: number;
 }
 
-const state = (): QuizState => ({
-    quizScore: 0,
-    nowId: 0,
+export const useQuizStore = defineStore('quiz', {
+    state: (): QuizState => ({
+        quizScore: 0,
+        nowId: 0,
+        answered: 0,
+    }),
+    getters: {
+        getScore: (state): number => state.quizScore,
+        getNowId: (state): number => state.nowId,
+        getAnswered: (state): number => state.answered,
+    },
+    actions: {
+        setScore(value: number) {
+            this.quizScore = value;
+        },
+        incrementScore() {
+            this.quizScore += 1;
+        },
+        setNowId(value: number) {
+            this.nowId = value;
+        },
+        incrementNowId() {
+            this.nowId += 1;
+        },
+        setAnswered(value: number) {
+            this.answered = value;
+        },
+        incrementAnswered() {
+            this.answered += 1;
+        }
+    },
 });
-
-const getters = {
-    getScore(state: QuizState): number {
-        return state.quizScore;
-    },
-    getNowId(state: QuizState): number {
-        return state.nowId;
-    }
-};
-
-const mutations = {
-    setScore(state: QuizState, value: number) {
-        state.quizScore = value;
-    },
-    incrementScore(state: QuizState) {
-        state.quizScore += 1;
-    },
-    setNowId(state: QuizState, value: number) {
-        state.nowId = value;
-    },
-    incrementNowId(state: QuizState) {
-        state.nowId += 1;
-    }
-};
-
-const actions = {
-    setScore({ commit }, value: number) {
-        commit('setScore', value);
-    },
-    incrementScore({ commit }) {
-        commit('incrementScore');
-    },
-    setNowId({ commit }, value: number) {
-        commit('setNowId', value);
-    },
-    incrementNowId({ commit }) {
-        commit('incrementNowId');
-    }
-};
-
-export const quiz: Module<QuizState, any> = {
-    namespaced: true,
-    state,
-    getters,
-    mutations,
-    actions,
-};

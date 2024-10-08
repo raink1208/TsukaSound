@@ -1,19 +1,20 @@
 <script setup lang="ts">
 import Card from "primevue/card";
-import {useStore} from "vuex";
 import {computed} from "vue";
+import {useQuizStore} from "../stores/quiz/quiz.ts";
 const {question, questionId} = defineProps<{
   question: string;
   questionId: number;
 }>();
-const store = useStore();
-const quizScore = computed(() => store.getters["quiz/getScore"]);
+const store = useQuizStore();
+const quizScore = computed(() => store.quizScore);
+const answered = computed(() => store.answered);
 
 </script>
 
 <template>
   <div class="wrapper">
-    <p>{{questionId}}問中 {{quizScore}}問正解</p>
+    <p>{{answered}}問中 {{quizScore}}問正解</p>
     <Card>
       <template #title>Q. {{questionId + 1}}</template>
       <template #content>

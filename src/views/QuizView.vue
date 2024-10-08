@@ -5,12 +5,12 @@ import {computed, ref} from "vue";
 import QuizHeader from '../components/QuizHeader.vue';
 import QuizAnswerButtons from "../components/QuizAnswerButtons.vue";
 import QuizQuestion from "../components/QuizQuestion.vue";
-import {useStore} from "vuex";
+import {useQuizStore} from "../stores/quiz/quiz.ts";
 
-const store = useStore();
-const nowId = computed(() => store.getters["quiz/getNowId"]);
+const store = useQuizStore();
+const nowId = computed(() => store.nowId);
 
-const quizList: Quiz[] = quiz;
+const quizList: Quiz[] = quiz as Quiz[];
 const selectedQuiz = ref<Quiz>(quizList[nowId.value]);
 
 
@@ -19,12 +19,12 @@ const nextQuiz = () => {
     endQuiz();
     return;
   }
-  store.commit("quiz/incrementNowId")
+  store.incrementNowId();
   selectedQuiz.value = quizList[nowId.value];
 }
 
 const endQuiz = () => {
-  console.log("end")
+  console.log("end");
 }
 
 </script>

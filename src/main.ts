@@ -8,11 +8,13 @@ import Aura from '@primevue/themes/aura';
 import App from './App.vue';
 import {definePreset} from "@primevue/themes";
 import {router} from "./router";
-import store from './stores/quiz';
+import {createPinia} from "pinia";
 
 const app = createApp(App);
 
-app.use(store);
+const pinia = createPinia();
+app.use(pinia);
+
 app.use(router);
 app.use(PrimeVue, {
     theme: {

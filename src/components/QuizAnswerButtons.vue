@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import Button from "primevue/button";
-import {computed, onMounted, ref, watch} from "vue";
+import {onMounted, ref, watch} from "vue";
 import QuizAudioPlayer from "./QuizAudioPlayer.vue";
 import {AudioData} from "../domain/audio";
 import VerticalOptionButton from "./VerticalOptionButton.vue";
 import { Quiz, SelectOption } from "../domain/quiz";
-import { useStore } from "vuex";
+import {useQuizStore} from "../stores/quiz/quiz.ts";
 
 const path = import.meta.env.VITE_VOICE_PATH;
 
@@ -18,7 +18,7 @@ const emit = defineEmits<{
   (e: "next"): void;
 }>()
 
-const store = useStore();
+const store = useQuizStore();
 const selectOptions = ref<SelectOption[]>();
 const selectedAudio = ref<AudioData | null>(null);
 const answer = ref<string | string[]>();
@@ -69,14 +69,15 @@ const handleSubmitAnswer = () => {
     const arr1 = answer.value as string[];
     const arr2 = quiz.answer as string[];
     if (arr1.length === arr2.length && arr1.every(it => arr2.includes(it))) {
-      store.commit("quiz/incrementScore");
+      store.incrementScore();
     }
   } else {
     if ((quiz.answer as string) == (answer.value as string)) {
-      store.commit("quiz/incrementScore");
+      store.incrementScore();
     }
   }
   showNext.value = true;
+  store.incrementAnswered();
 }
 </script>
 
