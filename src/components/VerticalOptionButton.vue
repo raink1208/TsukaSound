@@ -2,14 +2,17 @@
 import Button from "primevue/button";
 import { SelectOption } from "../domain/quiz";
 
-const {options, playAudio, multiple} = defineProps<{
+const {options, playAudio, multiple, showAnswer} = defineProps<{
   options: SelectOption[];
   playAudio: (option: SelectOption) => void;
-  multiple: boolean
+  multiple: boolean,
+  showAnswer: boolean
 }>();
 const answer = defineModel<string | string[]>();
 
 const select = (option: SelectOption) => {
+  playAudio(option);
+  if (showAnswer) return;
   if (multiple) {
     const answerArray = answer.value as string[];
     if (Array.isArray(answerArray)) {
@@ -23,7 +26,6 @@ const select = (option: SelectOption) => {
   } else {
     answer.value = option.name;
   }
-  playAudio(option);
 }
 
 const isSelected = (option: SelectOption): boolean => {
@@ -37,7 +39,7 @@ const isSelected = (option: SelectOption): boolean => {
 </script>
 
 <template>
-  <div class="vertical">
+  <div class="vertical" :class="{showAnswer: showAnswer}">
     <Button
       v-for="option in options"
       :key="option.name"
@@ -71,5 +73,13 @@ const isSelected = (option: SelectOption): boolean => {
 }
 .selected {
   background-color: var(--p-button-secondary-active-background) !important;
+}
+
+.showAnswer .selected {
+  background-color: red !important;
+}
+
+.showAnswer .answer {
+  background-color: lightGreen !important;
 }
 </style>

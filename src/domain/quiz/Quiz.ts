@@ -1,6 +1,7 @@
 export interface Quiz {
     type: "single" | "multi";
     question: string;
+    questionId: number;
     answer: string | string[];
     options: string[];
 }

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import Button from "primevue/button";
-import {onMounted, ref, watch} from "vue";
+import {computed, onMounted, ref, watch} from "vue";
 import QuizAudioPlayer from "./QuizAudioPlayer.vue";
 import {AudioData} from "../domain/audio";
 import VerticalOptionButton from "./VerticalOptionButton.vue";
@@ -9,16 +9,24 @@ import { useStore } from "vuex";
 
 const path = import.meta.env.VITE_VOICE_PATH;
 
-const { quiz } = defineProps<{
+const props = defineProps<{
   quiz: Quiz
 }>();
+
+
+const emit = defineEmits<{
+  (e: "next"): void;
+}>()
 
 const store = useStore();
 const selectOptions = ref<SelectOption[]>();
 const selectedAudio = ref<AudioData | null>(null);
 const answer = ref<string | string[]>();
 
-onMounted(() => {
+const showNext = ref<boolean>(false);
+
+const loadQuiz = () => {
+  const quiz = props.quiz;
   if (quiz.type === "single") {
     answer.value = "";
   } else {
@@ -40,7 +48,11 @@ onMounted(() => {
     })
   }
   selectOptions.value = result;
-});
+  showNext.value = false;
+}
+
+onMounted(loadQuiz)
+watch(props , loadQuiz);
 
 const setPlayAudio = (option: SelectOption) => {
   selectedAudio.value = {
@@ -50,6 +62,8 @@ const setPlayAudio = (option: SelectOption) => {
 }
 
 const handleSubmitAnswer = () => {
+  console.log(answer.value);
+  const quiz = props.quiz;
   if (!answer.value) return;
   if (quiz.type === "multi") {
     const arr1 = answer.value as string[];
@@ -62,22 +76,25 @@ const handleSubmitAnswer = () => {
       store.commit("quiz/incrementScore");
     }
   }
+  showNext.value = true;
 }
 </script>
 
 <template>
   <div class="quiz-form">
     <QuizAudioPlayer :selectedAudio="selectedAudio" />
-    <div class="options" v-if="selectOptions">
+    <div :class="{options: true, showAnswer: showNext}" v-if="selectOptions">
       <VerticalOptionButton
         :options="selectOptions"
         :playAudio="setPlayAudio"
         :multiple="quiz.type === 'multi'"
         v-model="answer"
+        :showAnswer="showNext"
       />
     </div>
     <div class="submit">
-      <Button class="submitAnswer" @click="handleSubmitAnswer">回答</Button>
+      <Button class="next" @click="emit('next')" v-if="showNext">次へ</Button>
+      <Button class="submitAnswer" @click="handleSubmitAnswer" v-else>回答</Button>
     </div>
   </div>
 </template>
@@ -87,12 +104,12 @@ const handleSubmitAnswer = () => {
   width: 100%;
   padding-bottom: 15px;
 }
-.submitAnswer {
+.submitAnswer, .next {
   margin-top: 10px;
   width: 100%;
 }
 @media screen and (max-width: 600px) {
-  .submitAnswer {
+  .submitAnswer, .next {
     height: 50px;
   }
 }

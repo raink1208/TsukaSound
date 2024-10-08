@@ -7,32 +7,40 @@ import QuizAnswerButtons from "../components/QuizAnswerButtons.vue";
 import QuizQuestion from "../components/QuizQuestion.vue";
 import {useStore} from "vuex";
 
-const quizList: Quiz[] = quiz;
 const store = useStore();
-const quizScore = computed(() => store.getters["quiz/getScore"]);
+const nowId = computed(() => store.getters["quiz/getNowId"]);
 
-const questionCount = ref(0);
+const quizList: Quiz[] = quiz;
+const selectedQuiz = ref<Quiz>(quizList[nowId.value]);
 
-const getRandomQuiz = () => {
-  if (quizList.length === 0) return null;
-  const randomIndex = Math.floor(Math.random() * quizList.length);
-  const [item] = quizList.splice(randomIndex, 1);
-  questionCount.value = questionCount.value + 1;
-  return item;
+
+const nextQuiz = () => {
+  if (!quizList[nowId.value+1]) {
+    endQuiz();
+    return;
+  }
+  store.commit("quiz/incrementNowId")
+  selectedQuiz.value = quizList[nowId.value];
 }
-const selectedQuiz = ref<Quiz | null>(getRandomQuiz());
+
+const endQuiz = () => {
+  console.log("end")
+}
+
 </script>
 
 <template>
   <div class="header-area">
-    <QuizHeader :score="quizScore" />
+    <QuizHeader />
   </div>
-  <div class="container" v-if="selectedQuiz">
-    <div class="question-area" >
-      <QuizQuestion :question="selectedQuiz.question" />
-    </div>
-    <div class="answers-area">
-      <QuizAnswerButtons :quiz="selectedQuiz"/>
+  <div class="background">
+    <div class="container" v-if="selectedQuiz">
+      <div class="question-area" >
+        <QuizQuestion :question="selectedQuiz.question" :questionId="selectedQuiz.questionId"/>
+      </div>
+      <div class="answers-area">
+        <QuizAnswerButtons :quiz="selectedQuiz" @next="nextQuiz" />
+      </div>
     </div>
   </div>
 </template>
@@ -42,13 +50,16 @@ body {
   height: 100vh;
   overflow: hidden;
 }
+.background {
+  background-color: var(--p-surface-200);
+}
 .header-area {
   width: 100vw;
   height: 70px;
 }
 .container {
   position: relative;
-  height: calc(100vh - 80px);
+  height: calc(100vh - 70px);
   margin: 0 auto;
   padding: 0 30px;
   max-width: 1000px;
