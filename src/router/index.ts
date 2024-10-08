@@ -10,7 +10,7 @@ export const router = createRouter({
         },
         {
             path: '/quiz',
-            component: import("../views/QuizView.vue")
+            component: () => import("../views/QuizView.vue")
         }
     ]
 });
