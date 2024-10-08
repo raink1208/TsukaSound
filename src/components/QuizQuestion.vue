@@ -13,8 +13,8 @@ const answered = computed(() => store.answered);
 </script>
 
 <template>
-  <div class="wrapper">
-    <p>{{answered}}問中 {{quizScore}}問正解</p>
+  <div class="question">
+    <p class="score">{{answered}}問中 {{quizScore}}問正解</p>
     <Card>
       <template #title>Q. {{questionId + 1}}</template>
       <template #content>
@@ -25,7 +25,14 @@ const answered = computed(() => store.answered);
 </template>
 
 <style scoped>
-.wrapper {
+.question {
   padding-top: 50px;
 }
+
+.score {
+  text-align: right;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
 </style>
