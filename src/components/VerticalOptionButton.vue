@@ -62,6 +62,11 @@ const isSelected = (option: SelectOption): boolean => {
   display: block;
   width: 100%;
 }
+
+:deep(.p-button-label) {
+  font-weight: bold;
+}
+
 .p-button:hover {
   border: none;
 }
@@ -72,7 +77,7 @@ const isSelected = (option: SelectOption): boolean => {
   font-weight: bold;
 }
 .selected {
-  background-color: var(--p-button-secondary-active-background) !important;
+  background-color: var(--p-slate-400) !important;
 }
 
 .showAnswer .selected {

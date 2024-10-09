@@ -62,9 +62,9 @@ const setPlayAudio = (option: SelectOption) => {
 }
 
 const handleSubmitAnswer = () => {
-  console.log(answer.value);
   const quiz = props.quiz;
   if (!answer.value) return;
+  if (answer.value.length === 0) return;
   if (quiz.type === "multi") {
     const arr1 = answer.value as string[];
     const arr2 = quiz.answer as string[];

@@ -63,7 +63,7 @@ const handleDownload = async (voiceName: string) => {
         <MultiSelect v-model="filterModel.value" @change="filterCallback()" :options="ranks" placeholder="ランク" :show-toggle-all="false"/>
       </template>
     </Column>
-    <Column field="title" header="再生" style="width: 5%">
+    <Column field="title" header="保存" style="width: 5%">
       <template #body="{data}">
         <Button icon="pi pi-download" aria-label="download" @click="handleDownload(data.title)" />
       </template>

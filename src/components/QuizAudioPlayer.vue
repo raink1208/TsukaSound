@@ -52,32 +52,60 @@ onMounted(() => {
 </script>
 
 <template>
-  <audio
-    ref="audioPlayer"
-    :src="selectedAudio?.filePath"
-    @loadedmetadata="onLoad"
-    @ended="onEnded"
-  />
-
-  <div id="play" @click="togglePlay">
-    <PauseButton v-if="isPlaying" />
-    <PlayButton v-else />
-  </div>
-  <p id="audioName">{{selectedAudio?.audioName}}</p>
-  <div id="volumeControl">
-    <i class="pi pi-volume-up" />
-    <input
-      id="volume"
-      type="range"
-      min="0"
-      max="1"
-      step="0.01"
-      v-model="volume"
-      @input="changeVolume"
+  <div class="audioPlayerContainer">
+    <audio
+      ref="audioPlayer"
+      :src="selectedAudio?.filePath"
+      @loadedmetadata="onLoad"
+      @ended="onEnded"
     />
+
+    <div id="audioControl">
+      <div id="play" @click="togglePlay">
+        <PauseButton v-if="isPlaying" />
+        <PlayButton v-else />
+      </div>
+      <p id="audioName">再生: {{selectedAudio?.audioName ?? "未選択"}}</p>
+    </div>
+    <div id="volumeControl">
+      <i class="pi pi-volume-up" />
+      <input
+        id="volume"
+        type="range"
+        min="0"
+        max="1"
+        step="0.01"
+        v-model="volume"
+        @input="changeVolume"
+      />
+    </div>
   </div>
 </template>
 
 <style scoped>
 
+.audioPlayerContainer {
+  display: flex;
+  justify-content: space-between;
+
+  height: 40px;
+}
+
+#audioControl {
+  display: flex;
+}
+
+#audioName {
+  line-height: 40px;
+}
+
+#volumeControl {
+  line-height: 40px;
+}
+
+@media screen and (max-width: 350px) {
+  #volumeControl input {
+    width: 100px;
+  }
+}
 </style>

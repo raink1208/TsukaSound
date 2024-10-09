@@ -1,30 +1,30 @@
 <script setup lang="ts">
 import quiz from '../assets/voice/quiz.json';
 import type {Quiz} from "../domain/quiz";
-import {computed, ref} from "vue";
+import {ref} from "vue";
 import QuizHeader from '../components/QuizHeader.vue';
 import QuizAnswerButtons from "../components/QuizAnswerButtons.vue";
 import QuizQuestion from "../components/QuizQuestion.vue";
-import {useQuizStore} from "../stores/quiz/quiz.ts";
+import QuizResult from "../components/QuizResult.vue";
 
-const store = useQuizStore();
-const nowId = computed(() => store.nowId);
+const nowId = ref<number>(0);
 
 const quizList: Quiz[] = quiz as Quiz[];
-const selectedQuiz = ref<Quiz>(quizList[nowId.value]);
-
+const selectedQuiz = ref<Quiz | null>(quizList[0]);
+const showResult = ref<boolean>(false);
 
 const nextQuiz = () => {
   if (!quizList[nowId.value+1]) {
     endQuiz();
     return;
   }
-  store.incrementNowId();
+  nowId.value += 1;
   selectedQuiz.value = quizList[nowId.value];
 }
 
 const endQuiz = () => {
-  console.log("end");
+  selectedQuiz.value = null;
+  showResult.value = true;
 }
 
 </script>
@@ -34,6 +34,9 @@ const endQuiz = () => {
     <QuizHeader />
   </div>
   <div class="background">
+    <div class="container" v-if="showResult">
+      <QuizResult />
+    </div>
     <div class="container" v-if="selectedQuiz">
       <div class="question-area" >
         <QuizQuestion :question="selectedQuiz.question" :questionId="selectedQuiz.questionId"/>
@@ -52,6 +55,7 @@ body {
 }
 .background {
   background-color: var(--p-surface-200);
+  height: calc(100vh - 70px);
 }
 .header-area {
   width: 100vw;
@@ -59,7 +63,7 @@ body {
 }
 .container {
   position: relative;
-  height: calc(100vh - 70px);
+  height: 100%;
   margin: 0 auto;
   padding: 0 30px;
   max-width: 1000px;
