@@ -42,7 +42,7 @@
     "options": ["金額は！？", "小鼓3", "缶けり", "和太鼓"]
   },
   {
-    "type": "single",
+    "type": "multi",
     "question": "虫の鳴き声をすべて選べ",
     "questionId": 6,
     "answer": ["ヒグラシの鳴き声", "エンマコオロギの声"],
@@ -56,14 +56,14 @@
     "options": ["ジャジャーン", "ショットガン", "ガラスが割れる", "ドラム缶"]
   },
   {
-    "type": "single",
+    "type": "multi",
     "question": "水に関係する音をすべて選べ",
     "questionId": 8,
     "answer": ["水に飛び込む2", "水中", "水が蒸発"],
     "options": ["水に飛び込む2", "水中", "水が蒸発", "突っ込みを入れる"]
   },
   {
-    "type": "single",
+    "type": "multi",
     "question": "楽器の音をすべて選べ",
     "questionId": 9,
     "answer": ["尺八2", "ハープの音色2"],
