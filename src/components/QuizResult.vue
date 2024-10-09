@@ -23,6 +23,9 @@ const tweetResult = () => {
 <template>
   <div class="resultContainer">
     <Card>
+      <template #header>
+        <h2 class="title">領国つかさ 声マネキングボイスクイズ</h2>
+      </template>
       <template #content>
         <p class="result">
           {{answered}}問中 {{score}}問正解しました
@@ -44,6 +47,9 @@ const tweetResult = () => {
   position: relative;
   height: 50vh;
 }
+.title {
+  padding-left: 10px;
+}
 
 .result {
   font-size: 25px;
@@ -56,12 +62,12 @@ const tweetResult = () => {
 }
 
 .tweet {
-  margin-top: 5vh;
+  margin-top: 2vh;
   text-align: center;
 }
 
 .tweet .p-button {
-  padding: 10px 15px;
+  padding: 10px 30px;
   font-weight: bold;
 }
 </style>
